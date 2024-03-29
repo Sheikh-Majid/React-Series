@@ -2,11 +2,20 @@ import React ,{ useState} from 'react'
 
 const Colors = () => {
 
+    const [name, setname] = useState("Majid");
+    const changeName = () => {
+        if (name == "Majid") {
+            setname("Shaikh")
+        } else {
+            setname("Majid")
+        }
+    }
+
     const [color, setcolor] = useState("");
 
-    const changeR = () => {
-        document.body.style.backgroundColor = "red";
-    }
+    // const changeR = () => {
+    //     document.body.style.backgroundColor = "red";
+    // }
      const changeY = () => {
         document.body.style.backgroundColor = "yellow";
     }
@@ -61,7 +70,12 @@ const Colors = () => {
               <div className='bg-gray-500 p-2 mr-2 rounded-xl text-white' onClick={changeGr}>Gray</div>
               <div className='bg-lime-400 p-2 mr-2 rounded-xl' onClick={changeL}>Lime</div>     
               <div className='bg-cyan-300 p-2 mr-2 rounded-xl' onClick={changeC}>Cyan</div>
-         </div>
+          </div>
+          
+          <div>
+              <h1 className='mt-10'>Hello {name}</h1>
+              <button className='bg-pink-300 mt-10' onClick={changeName}>click To change Name</button>
+          </div>
     </div>
   )
 }
